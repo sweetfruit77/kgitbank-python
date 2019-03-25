@@ -1,0 +1,60 @@
+1. docker pull consol/ubuntu-xfce-vnc
+2. docker images
+3. docker run -d -it --name vnc --user 0 -p 5901:5901 -p 6901:6901 -e VNC_RESOLUTION=1600x900 consol/ubuntu-xfce-vnc
+4. docker ps -a
+5. docker start vnc
+6. docker attach vnc     콘솔모드 진입
+7. docker stop vnc
+8. docker restart vnc
+9. docker rm vnc                    컨테이너 삭제
+10. docker rmi consol/ubuntu-xfce-vnc    이미지삭제
+11. docker commit vnc vnc_python 컨테이너를 이미지로 저장
+12. docker tag vnc ikebi76/vnc_python
+13. docker push ikebi76/vnc_python:해시태그(구분값이나버전값말함.) 
+------------------------------------------------------------------------------------------------
+apt update
+apt upgrade
+apt install curl
+curl -O https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh
+bash Anaconda3-5.2.0-Linux-x86_64.sh
+
+비주얼소스코드 웹브라우저 직접다운로드
+apt-get install gconf-service-backend gconf-service gconf2-common libgconf-2-4
+apt install ./Downloads/code_1.30.0-1544567151_amd64.deb
+code --user-data-dir ./   비주얼소스코드 실행
+
+- insatll jupyter
+pip install --upgrade pip
+pip install jupyter
+jupyter notebook --generate-config
+c.NotebookApp.ip = '0.0.0.0'
+c.NotebookApp.notebook_dir = '/home/'
+c.NotebookApp.open_browser = False
+c.NotebookApp.password = '생성된 sha 키 추가'
+
+-키생성
+from notebook.auth import passwd(python에서)
+sha1:148e45dcb365:065cac3dd075b2ebae23e8770851b2d76941e5f2
+
+
+링크 /usr/bin/python, 
+python
+python3
+
+rm -f /usr/bin/python
+rm -f /usr/bin/python3
+ln -s /headless/anaconda3/bin/python3 /usr/bin/python
+ln -s /headless/anaconda3/bin/python3 /usr/bin/python3
+
+
+jupyter notebook --allow-root (실행)
+
+
+
+docker cp 로컬경로:./headless/pythonProject(컨테이너 안의 경로)   파일복사
+
+
+docker run -d -it --name python --user 0 -p 5901:5901 -p 6901:6901 -e VNC_RESOLUTION=1600x900 vnc_python:v1.0
+
+docker start -ia vnc
+
