@@ -8,11 +8,11 @@ driver.implicitly_wait(3)
 # url에 접근한다.
 #driver.get('https://google.com')
 driver.get('https://nid.naver.com/nidlogin.login')
-#driver.find_element_by_name('id').send_keys('i_kebi')
-#driver.find_element_by_name('pw').send_keys('sora14691469')
+#driver.find_element_by_name('id').send_keys('id')
+#driver.find_element_by_name('pw').send_keys('pw')
 
-id='i_kebi'
-pw='sora14691469'
+id='id'
+pw='pw'
 
 driver.execute_script("document.getElementsByName('id')[0].value=\'"+id+"\'")
 driver.execute_script("document.getElementsByName('pw')[0].value=\'"+pw+"\'")

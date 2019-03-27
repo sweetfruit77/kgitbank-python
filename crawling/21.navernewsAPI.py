@@ -3,8 +3,8 @@
 import os
 import sys
 import urllib.request
-client_id = "P3oeWdE6metjBr2zklti"
-client_secret = "hJRH_ElxhD"
+client_id = "client_id"
+client_secret = "client_secret"
 encText = urllib.parse.quote("봄나물")
 url = "https://openapi.naver.com/v1/search/blog?query=" + encText # json 결과
 # url = "https://openapi.naver.com/v1/search/blog.xml?query=" + encText # xml 결과
