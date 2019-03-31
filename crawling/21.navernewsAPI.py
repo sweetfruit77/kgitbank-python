@@ -3,6 +3,7 @@
 import os
 import sys
 import urllib.request
+# naver개발자 센터에서 발급받은 client_id,client_secret
 client_id = "client_id"
 client_secret = "client_secret"
 encText = urllib.parse.quote("봄나물")
