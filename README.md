@@ -1,2 +1,1 @@
-# kgitbank-python
-itbank python
+# python
